@@ -1,0 +1,40 @@
+{% load static %}
+{% static "screenshots" as baseUrl %}
+<!--<!DOCTYPE html>-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        p {
+            font-family: 'Georgia', Serif;
+            color: black;
+            margin-left:50px;
+        }
+    </style>
+</head>
+
+<body>
+  {% block content %}
+    <h1 align="center">Success</h1>
+
+    <div class="content2">
+        <img src="{% url 'video_feed' %}" alt="Video Stream" height="450">
+      <p style="font-size: 20px">
+        <b>Found the person in the video</b>
+      </p>
+    </div>
+<!--    <div>-->
+<!--        <img src="{{baseUrl}}/{{img}}" alt="Matched Face" height="400">-->
+<!--        <b>First Occurrence: {{ video_time }}</b>-->
+<!--    </div>-->
+  {% endblock %}
+</body>
+
+</html>
+
+
+
+

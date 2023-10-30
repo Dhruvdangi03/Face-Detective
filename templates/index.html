@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Face Detection</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <style>
+        .content2 form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-form {
+            display: flex;
+            justify-content: space-between;
+            width: 100vh;
+        }
+
+        #submit-btn {
+            margin-up: 100px;
+            margin: 10% 43%;
+            background-color: #09b53a;
+            border-radius: 10px;
+            border-style: none;
+            color: #ffffff;
+            height: 25px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Face Recognition</div>
+    </nav>
+    <div class="parent">
+        <div id="screen1" class="content">
+            <div class="column1">
+                <h1>Identify a Person</h1>
+                <h3>in a video</h3>
+                <p>Our site can be used to find a person a particular given video along with the pictures
+                    to train the AI Please click on next to drop your files </p>
+                <button onclick="landing()">NEXT</button>
+            </div>
+            <div class="column2">
+                <img src="/static/img/back.png" alt="banner" width="500px">
+            </div>
+        </div>
+
+    </div>
+    <div class="content2">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-form">
+                <div class="drop-zone">
+                    <span class="drop-zone-message">Drag your images here to upload</span>
+                    <input class="drop-zone-input" type="file" name="image" accept="image/*">
+                </div>
+
+                <div class="drop-zone">
+                    <span class="drop-zone-message">Drag your video here to upload</span>
+                    <input class="drop-zone-input" type="file" name="video" accept="video/">
+                </div>
+            </div>
+            <Button id="submit-btn"  type="submit">submit</Button>
+        </form>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
+
+
+
+
